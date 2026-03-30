@@ -1,9 +1,9 @@
-# Renault_Intership
+# Renault_Internship
 End of studies internship at Reanult - Ampere Software technologies (AST)
 
 Maxence Maury
 
-## Semaine 1
+## Semaine 1 [23 mars - 27 mars]
 
 Maxime Dandre, PO et tuteur de stage
 
