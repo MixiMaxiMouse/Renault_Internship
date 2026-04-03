@@ -20,3 +20,12 @@ Avancement sur le MVP : iterations de poc et validation par Maxime
 - Lundi 30 mars deuxieme poc validé par Maxime: Dashboard plus complet basé sur un extract codebeamer en excel et sur les vrai repos git des projets. Rajout gestion depot git et gestion fichier excel.
 
 Suite du stage : Utiliser des LLMs pour automatisation de la verification des tests et de l'eventuel implementation de ceux ci.
+
+## Semaine 2 
+Formation opencode, et copilot. Renault cherche a utiliser l'IA de plus en plus et cherche des gens formé a l'IA.
+fin de l'implem du dashboard MVP, dockerisation et exposition sur reseau interne a l'adresse du pc linux (qui tourne en permanance avec l'appli)
+Mise en place petite CI locale pour valider qualité de code, sous forme de script. gitlab CI trop compliqué car pas de runner et projet privé (pas d'autres contributeurs) donc pas besoin.
+Cleanup de l'appli et premier livrable au PO. Validé.
+Mise en palce d'un vrai environnement de dev sur une autre branche avec un autre port d'exposition. jusqu'ici le dev servait de prod comme il n'y avait toujours pas de version stable.
+cyber training et codebeamer training
+
