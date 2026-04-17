@@ -44,3 +44,20 @@ Reunion de suivi de stage avec tuteur pour presenter mes avencements et fixer le
 Prochains objectifs: plus PO friendly et configurable pour possiblement une ouverture a d'autres projets/team. Donc configuration du model LLm en front rajout de logique metier pour comprehension, gain de temps et lisibilité.
 Revision score IA, quelques ratés ... revoir comment ameliorer le RAG.
 
+## Semaine 4
+Beaucoup de features sur l'appli de traçabilité (nommée reqtrack).
+
+fiabilisation côté Excel, parsing de la description (beaucoup de CSS, etc.), review des boutons et de leurs fonctionnalités.
+RAG séparé en deux étapes, plus un pipeline à proprement parler : d'abord le FAISS puis le LLM avec résultats intermédiaires.
+feature : quand on a trouvé un test par IA, on peut maintenant automatiquement modifier le header et créer un commit,
+future : partie push à revoir et ajouter le support multibranche.
+Réunion avec Maxime en début de semaine pour valider les rendus et réajuster les nouvelles features, dont les commits et le RAG.
+Deux matinées d'intégration stagiaires : rencontres de beaucoup d'autres stagiaires et perspectives de collaboration / présentation de nos sujets dans d'autres équipes.
+
+copilot :
+Cette semaine a surtout été consacrée à rendre reqtrack plus propre, plus robuste et plus proche d’un vrai outil utilisable en conditions réelles.
+Gros travail sur l’architecture, notamment côté IA : séparation claire entre la partie FAISS (recherche sémantique) et la partie LLM (scoring et raisonnement). Ça a permis de mieux comprendre le pipeline RAG, de corriger plusieurs bugs et de préparer l’arrivée de plusieurs modèles LLM configurables via les endpoints backend.
+La gestion des repositories Git a été nettement améliorée : sélection du repo depuis le front, ajout d’un bouton de pull, déplacement de la logique de refresh côté backend. L’index FAISS est maintenant reconstruit automatiquement quand les repos changent, ce qui garantit que l’IA travaille toujours sur un état cohérent du code.
+Côté fonctionnalités, la partie génération de commits a bien évolué : commits conformes aux specs, avec possibilité d’éditer le message, le header et le nom de branche directement dans l’UI. Ça rend la feature beaucoup plus réaliste par rapport à un vrai workflow de dev.
+Enfin, beaucoup de temps a été passé sur le nettoyage du code et l’UX : refactor du front pour du clean code, centralisation des messages d’erreur, correction des problèmes de sanitizing des descriptions, lint et format à répétition. L’objectif était clairement de passer d’un proto avancé à une base saine et maintenable.
+En résumé : cette semaine marque une vraie montée en maturité du projet, avec des choix techniques plus clairs et une application plus stable, prête à être utilisée et étendue par la suite.
