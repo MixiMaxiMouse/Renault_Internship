@@ -3,6 +3,10 @@ Stage de fin d'études chez Renault - Ampere Software Technologies (AST)
 
 Maxence Maury
 
+## Glossaire
+FAISS = Facebook AI Similarity Search
+ReqTrack = l'app que je develope, Requirement Tracking
+
 ## Semaine 1 (23/03 -> 27/03)
 
 Maxime Dandre, PO et tuteur de stage
@@ -45,13 +49,13 @@ Prochains objectifs: plus PO friendly et configurable pour possiblement une ouve
 Revision score IA, quelques ratés ... revoir comment ameliorer le RAG.
 
 ## Semaine 4 (20/04 -> 24/04)
-J’ai continué à développer et améliorer l’application de traçabilité ReqTrack en ajoutant plusieurs fonctionnalités importantes. J’ai travaillé sur la fiabilisation du parsing Excel, ainsi que sur le traitement des descriptions (notamment avec du CSS), tout en revoyant les boutons et leur comportement pour assurer une meilleure cohérence globale.
+J’ai continué à développer et améliorer l’application de traçabilité que j'ai nommé ReqTrack en ajoutant plusieurs fonctionnalités importantes. J’ai travaillé sur la fiabilisation du parsing Excel, ainsi que sur le traitement des descriptions (notamment avec du CSS), tout en revoyant les boutons et leur comportement pour assurer une meilleure cohérence globale.
 Côté IA, j’ai clarifié le fonctionnement du RAG en le séparant en deux étapes distinctes : une première basée sur FAISS pour la recherche, puis une seconde avec le LLM, ce qui permet d’avoir des résultats intermédiaires plus exploitables et un fonctionnement plus propre. J’ai aussi ajouté une fonctionnalité permettant, après identification d’un test par l’IA, de modifier automatiquement le header et de générer un commit.
 En parallèle, j’ai continué à améliorer la gestion Git (avec encore des évolutions prévues, notamment sur le push et le multi-branches) et à nettoyer le code pour le rendre plus maintenable. Une réunion avec mon encadrant en début de semaine m’a permis de valider les choix réalisés et d’ajuster certaines features, notamment autour des commits et du RAG.
 Enfin, j’ai participé à deux matinées d’intégration avec d’autres stagiaires, ce qui a permis d’échanger sur les projets et d’envisager des collaborations avec d’autres équipes.
 
-# Semaine 5 (27/04 -> 01/05)
+## Semaine 5 (27/04 -> 01/05)
 J’ai travaillé sur la maintenance de ReqTrack en consolidant les fonctionnalités existantes, notamment en finalisant le système de commit et de push directement depuis l’interface web. J’ai également optimisé le rafraîchissement de l’application en passant certains traitements en arrière-plan comme le build de l'index du FAISS(Facebook AI Similarity Search) afin de rendre l’utilisation plus fluide.
 En parallèle, j’ai revu l’ensemble des fonctionnalités déjà développées pour vérifier leur bon fonctionnement et leur qualité. Cela m’a aussi amené à corriger plusieurs bugs (routing, workflows Git, parsing) et à améliorer la structure du code via du refactoring et du nettoyage. Enfin, j’ai continué à faire évoluer l’application en ajoutant des éléments comme la gestion du statut des exigences et son intégration dans le dashboard.
 
-# Semaine 6 (04/05 -> 08/05) -- CURRENT
+## Semaine 6 (04/05 -> 08/05) -- CURRENT
