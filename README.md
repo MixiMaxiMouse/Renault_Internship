@@ -45,31 +45,13 @@ Prochains objectifs: plus PO friendly et configurable pour possiblement une ouve
 Revision score IA, quelques ratés ... revoir comment ameliorer le RAG.
 
 ## Semaine 4 (20/04 -> 24/04)
-Beaucoup de features sur l'appli de traçabilité (nommée reqtrack).
-
-fiabilisation côté Excel, parsing de la description (beaucoup de CSS, etc.), review des boutons et de leurs fonctionnalités.
-RAG séparé en deux étapes, plus un pipeline à proprement parler : d'abord le FAISS puis le LLM avec résultats intermédiaires.
-feature : quand on a trouvé un test par IA, on peut maintenant automatiquement modifier le header et créer un commit,
-future : partie push à revoir et ajouter le support multibranche.
-Réunion avec Maxime en début de semaine pour valider les rendus et réajuster les nouvelles features, dont les commits et le RAG.
-Deux matinées d'intégration stagiaires : rencontres de beaucoup d'autres stagiaires et perspectives de collaboration / présentation de nos sujets dans d'autres équipes.
-
-copilot :
-Cette semaine a surtout été consacrée à rendre reqtrack plus propre, plus robuste et plus proche d’un vrai outil utilisable en conditions réelles.
-Gros travail sur l’architecture, notamment côté IA : séparation claire entre la partie FAISS (recherche sémantique) et la partie LLM (scoring et raisonnement). Ça a permis de mieux comprendre le pipeline RAG, de corriger plusieurs bugs et de préparer l’arrivée de plusieurs modèles LLM configurables via les endpoints backend.
-La gestion des repositories Git a été nettement améliorée : sélection du repo depuis le front, ajout d’un bouton de pull, déplacement de la logique de refresh côté backend. L’index FAISS est maintenant reconstruit automatiquement quand les repos changent, ce qui garantit que l’IA travaille toujours sur un état cohérent du code.
-Côté fonctionnalités, la partie génération de commits a bien évolué : commits conformes aux specs, avec possibilité d’éditer le message, le header et le nom de branche directement dans l’UI. Ça rend la feature beaucoup plus réaliste par rapport à un vrai workflow de dev.
-Enfin, beaucoup de temps a été passé sur le nettoyage du code et l’UX : refactor du front pour du clean code, centralisation des messages d’erreur, correction des problèmes de sanitizing des descriptions, lint et format à répétition. L’objectif était clairement de passer d’un proto avancé à une base saine et maintenable.
-En résumé : cette semaine marque une vraie montée en maturité du projet, avec des choix techniques plus clairs et une application plus stable, prête à être utilisée et étendue par la suite.
+J’ai continué à développer et améliorer l’application de traçabilité ReqTrack en ajoutant plusieurs fonctionnalités importantes. J’ai travaillé sur la fiabilisation du parsing Excel, ainsi que sur le traitement des descriptions (notamment avec du CSS), tout en revoyant les boutons et leur comportement pour assurer une meilleure cohérence globale.
+Côté IA, j’ai clarifié le fonctionnement du RAG en le séparant en deux étapes distinctes : une première basée sur FAISS pour la recherche, puis une seconde avec le LLM, ce qui permet d’avoir des résultats intermédiaires plus exploitables et un fonctionnement plus propre. J’ai aussi ajouté une fonctionnalité permettant, après identification d’un test par l’IA, de modifier automatiquement le header et de générer un commit.
+En parallèle, j’ai continué à améliorer la gestion Git (avec encore des évolutions prévues, notamment sur le push et le multi-branches) et à nettoyer le code pour le rendre plus maintenable. Une réunion avec mon encadrant en début de semaine m’a permis de valider les choix réalisés et d’ajuster certaines features, notamment autour des commits et du RAG.
+Enfin, j’ai participé à deux matinées d’intégration avec d’autres stagiaires, ce qui a permis d’échanger sur les projets et d’envisager des collaborations avec d’autres équipes.
 
 # Semaine 5 (27/04 -> 01/05)
-J'ai fait de la maintenance sur reqtrack, j'ai fini d'ajouter des fonctionnalités esentiels comme le commit workflow, on peut commit et push depuis la page web reqtrack, j'ai optimisé le refresh four faire des taches en background pour que l'utilisation soit plus fluide.
-J'ai principalement review toutes les fonctionnalités faites et si c'était bien fait.
-
-copilot : 
-Cette semaine, j’ai travaillé sur l’amélioration et la stabilisation de l’application, en corrigeant plusieurs bugs liés au routing, aux workflows Git et au parsing des commentaires.
-J’ai également refactorisé le projet pour améliorer sa structure (séparation des routes, utilisation de constantes) et harmonisé le code grâce au linting et au formatage.
-Par ailleurs, j’ai développé de nouvelles fonctionnalités autour de la gestion des exigences : ajout d’un champ "status", mise à jour du parser Excel pour gérer ce champ, et création d’un composant "AllRequirements" intégré au dashboard.
-Enfin, j’ai amélioré la robustesse globale de l’application en optimisant la gestion des erreurs et certains traitements en arrière-plan.
+J’ai travaillé sur la maintenance de ReqTrack en consolidant les fonctionnalités existantes, notamment en finalisant le système de commit et de push directement depuis l’interface web. J’ai également optimisé le rafraîchissement de l’application en passant certains traitements en arrière-plan comme le build de l'index du FAISS(Facebook AI Similarity Search) afin de rendre l’utilisation plus fluide.
+En parallèle, j’ai revu l’ensemble des fonctionnalités déjà développées pour vérifier leur bon fonctionnement et leur qualité. Cela m’a aussi amené à corriger plusieurs bugs (routing, workflows Git, parsing) et à améliorer la structure du code via du refactoring et du nettoyage. Enfin, j’ai continué à faire évoluer l’application en ajoutant des éléments comme la gestion du statut des exigences et son intégration dans le dashboard.
 
 # Semaine 6 (04/05 -> 08/05) -- CURRENT
