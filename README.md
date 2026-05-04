@@ -4,7 +4,7 @@ Stage de fin d'études chez Renault - Ampere Software Technologies (AST)
 Maxence Maury
 
 ## Glossaire
-FAISS = Facebook AI Similarity Search
+FAISS = Facebook AI Similarity Search \
 ReqTrack = l'app que je develope, Requirement Tracking
 
 ## Semaine 1 (23/03 -> 27/03)
