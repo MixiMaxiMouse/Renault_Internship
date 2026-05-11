@@ -6,6 +6,7 @@ Maxence Maury
 ## Glossaire
 FAISS = Facebook AI Similarity Search \
 ReqTrack = l'app que je develope, Requirement Tracking
+Maxime DANDRE = PO et tuteur entreprise
 
 ## Semaine 1 (23/03 -> 27/03)
 
@@ -58,4 +59,24 @@ Enfin, j’ai participé à deux matinées d’intégration avec d’autres stag
 J’ai travaillé sur la maintenance de ReqTrack en consolidant les fonctionnalités existantes, notamment en finalisant le système de commit et de push directement depuis l’interface web. J’ai également optimisé le rafraîchissement de l’application en passant certains traitements en arrière-plan comme le build de l'index du FAISS(Facebook AI Similarity Search) afin de rendre l’utilisation plus fluide.
 En parallèle, j’ai revu l’ensemble des fonctionnalités déjà développées pour vérifier leur bon fonctionnement et leur qualité. Cela m’a aussi amené à corriger plusieurs bugs (routing, workflows Git, parsing) et à améliorer la structure du code via du refactoring et du nettoyage. Enfin, j’ai continué à faire évoluer l’application en ajoutant des éléments comme la gestion du statut des exigences et son intégration dans le dashboard.
 
-## Semaine 6 (04/05 -> 08/05) -- CURRENT
+## Semaine 6 (04/05 -> 08/05)
+Livraison de reqtrack v3 a Maxime (la version avec RAG) feedback tres positif avec quelques bug fix durant la review avec lui.
+Puis concentration sur le ticket jira de converstion de tests unitaires en test composants en Kotlin sur l'appli DriverUI (affichage tableau de bord centrale), et sur l'outil CLI de reqtrack type headless batch.
+pour le ticket jira: aussi vu la mise a jour automatique des headers au bon format avec agent skill et MCP server (Model Context Protocol).
+
+## Semaine 7 (11/05 -> 13/05) -- CURRENT
+Travail sur l'outil CLI reqtrack. refacto de l'app reqtrack de layer architecture vers layer + core engine. utilisation du core engine pour le CLI: 
+1/ OUTIL crée
+lister tous les SCRS
+identifier les manquants
+pour les manquants, identifier des présents sémantiquement (hint seuil minimal à déterminer)
+2/ IA (prompt/script/commande à rédiger)
+vérification de l'état réel ds le code
+présent en unit test?
+hint confirmé ou infirmé
+réellement manquant
+production d'un rapport + stratégie d'implémentation pour limiter à 500 lignes le nb de modif potentiel (toujours plusieurs MR vs plusieurs commits)
+3/ IA/DEV 
+ingestion de l'implementation part x
+réalisation du code
+review
