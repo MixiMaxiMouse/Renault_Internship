@@ -80,3 +80,10 @@ production d'un rapport + stratégie d'implémentation pour limiter à 500 ligne
 ingestion de l'implementation part x
 réalisation du code
 review
+
+step 1 réalisé avec nouvel endpoint qui genere un rapport en json et appel http a l'endpoint dans le script, script lancé directement depuis docker.
+step 2 au debut je voulais faire un script qui n'utilise pas http ou d'endpoint et qui accédait directement au core engine depuis le docker mais au final :
+plus propre de faire un script en dehors du docker et qui aura acces a un orchestrateur d'agents comme opencode pour les etapes 2 et 3.
+De plus comme j'ai opté pour un appel http a un endpoint je n'ai plus besoin d'executer le script dans le meme environnement docker. par contre il faut que le docker tourne.
+Pour le moment probleme de taille entre le nombre de tokens que le llm prends et la taille de ma requete, (trop de requirements). meme avec un gros modele comme claude sonnet 4.6.
+
