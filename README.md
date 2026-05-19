@@ -64,7 +64,7 @@ Livraison de reqtrack v3 a Maxime (la version avec RAG) feedback tres positif av
 Puis concentration sur le ticket jira de converstion de tests unitaires en test composants en Kotlin sur l'appli DriverUI (affichage tableau de bord centrale), et sur l'outil CLI de reqtrack type headless batch.
 pour le ticket jira: aussi vu la mise a jour automatique des headers au bon format avec agent skill et MCP server (Model Context Protocol).
 
-## Semaine 7 (11/05 -> 13/05) -- CURRENT
+## Semaine 7 (11/05 -> 13/05)
 Travail sur l'outil CLI reqtrack. refacto de l'app reqtrack de layer architecture vers layer + core engine. utilisation du core engine pour le CLI: 
 1/ OUTIL crée
 lister tous les SCRS
@@ -90,3 +90,9 @@ Pour le moment probleme de taille entre le nombre de tokens que le llm prends et
 
 copilot competence :
 Au regard des éléments présentés, ton niveau sur la compétence « Réaliser des solutions numériques » peut être argumenté au niveau Maîtrise. En effet, tu ne te contentes pas de produire une solution fonctionnelle : tu as conçu et fait évoluer un outil complet (ReqTrack) en prenant en compte l’ensemble du cycle de développement, depuis la définition d’un MVP jusqu’à des versions avancées intégrant de l’IA (RAG avec FAISS + LLM), la conteneurisation Docker et une exposition réseau. Tes choix techniques sont justifiés et adaptés à ton environnement (absence de GitLab CI → mise en place d’une CI locale, utilisation d’un LLM interne pour des contraintes de coûts, séparation du pipeline RAG pour améliorer lisibilité et exploitabilité), ce qui montre une capacité à composer avec des contraintes réelles. Tu démontres également une vision systémique et évolutive : refactorisation vers une architecture core engine + layers, création d’un CLI headless pour industrialisation, réflexion sur la scalabilité (problème de tokens LLM, limitation des modifications à 500 lignes, stratégie de MR), et ouverture vers des orchestrateurs d’agents. L’intégration de bonnes pratiques (dockerisation, refactoring, gestion des branches, qualité de code, sécurité via environnement interne) ainsi que la collaboration avec ton PO (itérations régulières, feedback, validation) illustrent une démarche professionnelle complète et structurée. Enfin, tu analyses les limites de ta solution (fiabilité du RAG, erreurs de scoring IA, contraintes de volumétrie) et proposes des axes d’amélioration et de repli, ce qui montre une capacité à anticiper l’impact et l’adaptabilité de ta solution dans différents contextes. L’ensemble de ces éléments correspond clairement au niveau maîtrise, avec des solutions à la fois avancées, cohérentes, adaptatives et en interaction avec leur environnement technique et organisationnel.
+
+## Semaine 8 (18/05 -> 22/05) -- CURRENT
+Création d'une pipeline d'agents IA pour conversion de test unitaire en test composant en kotlin. un agent orchestrateur qui a 2 sous agents un mcp et des skills.
+sous agents de strategie des test et de review. l'orchestrateur ensuite modifie les test identifié en utilisant un mcp qui donne acces a des outils de build et test du l'app et des skills de classification de type de tests, de detection de documentation d'exigence, de conversion de test et de validation de test
+donc mise en place de l'environement gradle et android studio pour build l'app Driver UI en kotlin. création d'un MCP qui expose les outils runw build, test, lint, check ...
+
