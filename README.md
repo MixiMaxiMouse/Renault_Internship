@@ -103,4 +103,18 @@ Beaucou de réunion PIP = Project Increment Planning. on voit ce que l'equipe va
 Beaucoup de probleme de proxy dns environnement renault...
 
 
-## Semaine 10 (01/06 -> 05/06) -- CURRENT
+## Semaine 10 (01/06 -> 05/06)
+Finalisation de convertions de tests unitaires en tests composant (en kotlin android tests car on test des @Composable). création d'un agent de conversion de test non fructueuse. L'agent se base trop sur les test unitaires et va dans toutes directions. meilleur par iteration sans agent. 
+Les tests doivent couvrir les exigences (ici software requirement : SCRS) qui sont deja couvert par des tests unitaires mais la QA ne prend en compte que la tracabilité des tests android.
+Les test manquants sont principalement sur deux composants: Odometer et Autonomy widget.
+Au debut j'ai rajouté des fichiers de tests en suivant les test conventions donc utiliser la coroutine tryEmit au lieu de runTest comme dans les autres fichiers legacy.
+Mais probleme de coherence et trop de fichiers de test pour des composants pas si gros.
+les tests android actuels n'etaient plus a jour avec les test conventions du projet. 
+J'ai donc réecrit les tests dans un seul fichier au lieu de plusieurs avec chacun un setup (avant setup partagé par class abstraite mais illisible).
+j'ai uniformisé le niveau de mock, avant: une fois mocké a la couche presentation une fois application une fois infra ... Maintenant: mock couche infra donc on test bien les couches application et presentation.
+Donc reformattage des tests et rajout de tests.
+MR en attente de review.
+
+## Semaine 11 (08/06 -> 12/06) -- CURRENT
+Retour sur le sujet reqtrack tracabilité des exigences avec outils CLI en headless pour rectifier les scrs non tracés par batch et plus unitairement.
+Benchmark de l'outil/skill IA graphify qui est censé créer un graph du projet pour permettre au llm de naviguer plus rapidement et efficacement dans le projet en economisant des tokens.
