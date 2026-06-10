@@ -118,3 +118,15 @@ MR en attente de review.
 ## Semaine 11 (08/06 -> 12/06) -- CURRENT
 Retour sur le sujet reqtrack tracabilité des exigences avec outils CLI en headless pour rectifier les scrs non tracés par batch et plus unitairement.
 Benchmark de l'outil/skill IA graphify qui est censé créer un graph du projet pour permettre au llm de naviguer plus rapidement et efficacement dans le projet en economisant des tokens.
+premiere version du CLI : 
+- on crée un endpoint /analyze qui cree un fichier json avec : tous les scrs séparés en deux listes par testés et non testés.
+- chaque scrs a son id nom description etc. Chaque scrs testé a le path du fichier qui le test, et chaque non testé a une liste de 5 candidat de similarité sémentique choisi avec FAISS.
+- on donne ce compte rendu a un agent IA qui a pour role de review les scrs et trouver ceux qui pourraient etre rajoutés (en rajoutant son nom dans le header d'un test qui le testerai deja)
+- on crée un rapport de changement via ce premier agent puis on apelle un deuxieme agent qui aura pour but d'implementer ces changements par bloc de 500 LOC pour garder des MR relisible.
+
+Probleme : le premier agent n'arrive pas a tout ingérer sa fenetre de tokens est trop réduite. 
+2eme version cli :
+on essaye de decouper les input en bloc de scrs qui sont cohérents : les scrs qui ont des candidats FAISS qui pointe dans les memes dossiers sont regroupés.
+on rajoute graphify pour naviguer plus vite et moins cher dans les repos mais a voir si ça marche vraiment.
+
+benchmark graphify: petit projet -> ne reduit pas l'utilisation des tokens.
