@@ -5,7 +5,7 @@ Maxence Maury
 
 ## Glossaire
 FAISS = Facebook AI Similarity Search \
-ReqTrack = l'app que je develope, Requirement Tracking
+ReqTrack = l'app que je develope, Requirement Tracking \
 Maxime DANDRE = PO et tuteur entreprise
 
 ## Semaine 1 (23/03 -> 27/03)
