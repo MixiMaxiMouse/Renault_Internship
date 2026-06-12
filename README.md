@@ -115,7 +115,9 @@ j'ai uniformisé le niveau de mock, avant: une fois mocké a la couche presentat
 Donc reformattage des tests et rajout de tests.
 MR en attente de review.
 
-## Semaine 11 (08/06 -> 12/06) -- CURRENT
+## Semaine 11 (08/06 -> 12/06)
+Retours sur la MR androidTest implémentés, et beaucoup de rebase pour suivre main. erreurs de pipeline sur main qui a été réglé et ensuite re MR. attente de validation d'autres devs.
+
 Retour sur le sujet reqtrack tracabilité des exigences avec outils CLI en headless pour rectifier les scrs non tracés par batch et plus unitairement.
 Benchmark de l'outil/skill IA graphify qui est censé créer un graph du projet pour permettre au llm de naviguer plus rapidement et efficacement dans le projet en economisant des tokens.
 premiere version du CLI : 
@@ -130,3 +132,12 @@ on essaye de decouper les input en bloc de scrs qui sont cohérents : les scrs q
 on rajoute graphify pour naviguer plus vite et moins cher dans les repos mais a voir si ça marche vraiment.
 
 benchmark graphify: petit projet -> ne reduit pas l'utilisation des tokens.
+gros projet -> ne reduit pas non plus l'utilisation des tokens.
+augment marginalement la qualité de la reponse mais subjectif et non reproductible (LLM non deterministe)
+abandon de graphify.
+
+Strategie de chunking des exigences par script avant pipeline de LLM.
+on va séparer les exigences par software component puis par groupe en fonction de l'emplacement probable de l'exigence basé sur ses candidats sémantiques (récupéré par FAISS).
+
+
+## Semaine 12 (15/06 -> 19/06) -- CURRENT
