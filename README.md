@@ -140,4 +140,10 @@ Strategie de chunking des exigences par script avant pipeline de LLM.
 on va séparer les exigences par software component puis par groupe en fonction de l'emplacement probable de l'exigence basé sur ses candidats sémantiques (récupéré par FAISS).
 
 
-## Semaine 12 (15/06 -> 19/06) -- CURRENT
+## Semaine 12 (15/06 -> 19/06)
+Tokens copilot épuisés lors d'un test de l'agent CLI de reqtrack pour la correction en batch des scrs.
+Besoin d'encore optimiser la pipeline, pas seulement decouper les SCRS en deux fichiers un testé et un non testé. Je dois les séparer en module basé sur les modules du code. Je dois amincir les données ecrites dans le rapport /analyze (l'endpoint de l'app web qui donne l'etat actuel des SCRS) au minimum.
+en attendant les nouveaux tokens le 1 juillet je suis sur un nouveau sujet : un job en CI qui dit si une MR teste bien les SCRS si elle devait en implementer.
+Donc script en bash et trouver comment utiliser le bot interne qui a acces aux tickets jira pour lire la description et acces a codebeamer pour comparer le SCRS.
+
+## Semaine 13 (22/06 -> 26/06) -- CURRENT
