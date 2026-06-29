@@ -142,8 +142,21 @@ on va séparer les exigences par software component puis par groupe en fonction 
 
 ## Semaine 12 (15/06 -> 19/06)
 Tokens copilot épuisés lors d'un test de l'agent CLI de reqtrack pour la correction en batch des scrs.
-Besoin d'encore optimiser la pipeline, pas seulement decouper les SCRS en deux fichiers un testé et un non testé. Je dois les séparer en module basé sur les modules du code. Je dois amincir les données ecrites dans le rapport /analyze (l'endpoint de l'app web qui donne l'etat actuel des SCRS) au minimum.
+Besoin d'encore optimiser la pipeline, pas seulement decouper les SCRS en deux fichiers un testé et un non testé. Je dois les séparer en module basé sur les modules du code. Je dois amincire les données ecrites dans le rapport /analyze (l'endpoint de l'app web qui donne l'etat actuel des SCRS) au minimum.
 en attendant les nouveaux tokens le 1 juillet je suis sur un nouveau sujet : un job en CI qui dit si une MR teste bien les SCRS si elle devait en implementer.
 Donc script en bash et trouver comment utiliser le bot interne qui a acces aux tickets jira pour lire la description et acces a codebeamer pour comparer le SCRS.
 
-## Semaine 13 (22/06 -> 26/06) -- CURRENT
+## Semaine 13 (22/06 -> 26/06)
+Cette semaine, travail sur le job en CI qui verifie la presence des headers scrs si il y en a spécifié dans le ticket jira.
+J'ai réussi a trouver les veriables d'environnements en ci qui gèrent le bot de l'equipe pour accéder aux tickets jira depuis la CI, j'ai directement accés a la MR et au diff des fichiers.
+Donc je recupere le nom du jira dans la MR puis je recupere le jira sur l'API Jira officiel avec les credentials du bot.
+Apres je recuere les SCRS du jira et je les compares a ceux du git diff.
+Au debut je comparait au git diff lui meme mais je pouvais manquer les cas ou le dev modifie un scrs et donc ne réécrit pas le code et le scrs n'aparaiterait pas dans le diff.
+Donc maintenant je récupère la liste des fichiers modifiers et je cherche les scrs dans tout le fichier au lieu de que le diff.
+Cette semaine j'ai aussi été intégré au nouveau plan de restructuration des exigences.
+Laintenant les exigences ne seront plus sur codeBeamer mais stockés dans des fichiers markdown dans les repo git directement. 
+Donc : MarkSpec.
+Pour le moment en develeoppement, je vais le tester et donner un retour dessus.
+L'objectif etant que les agents IA ait directement accès aux exigences depuis le repo git.
+
+## Semaine 13 (29/06 -> 03/07) -- CURRENT
