@@ -154,9 +154,30 @@ Apres je recuere les SCRS du jira et je les compares a ceux du git diff.
 Au debut je comparait au git diff lui meme mais je pouvais manquer les cas ou le dev modifie un scrs et donc ne réécrit pas le code et le scrs n'aparaiterait pas dans le diff.
 Donc maintenant je récupère la liste des fichiers modifiers et je cherche les scrs dans tout le fichier au lieu de que le diff.
 Cette semaine j'ai aussi été intégré au nouveau plan de restructuration des exigences.
-Laintenant les exigences ne seront plus sur codeBeamer mais stockés dans des fichiers markdown dans les repo git directement. 
+Maintenant les exigences ne seront plus sur codeBeamer mais stockés dans des fichiers markdown dans les repo git directement. 
 Donc : MarkSpec.
 Pour le moment en develeoppement, je vais le tester et donner un retour dessus.
 L'objectif etant que les agents IA ait directement accès aux exigences depuis le repo git.
 
-## Semaine 13 (29/06 -> 03/07) -- CURRENT
+## Semaine 13 (29/06 -> 03/07)
+L'abonnement copilot s'est renouvelé j'ai donc 20 000 tokens. j'en profite pour lancer une version optimisé de ma pipeline d'agents IA pour la correction du coverage des SCRS.
+La pipeline découpe maintenant tout les scrs en bucket classé d'abord par repo, puis par chunk basé sur les modules probables de ou ils peuvent etre (moyenne de l'emplacements des fichiers ou se situent les candidats sémantiques faiss), et un chunk pour les scrs sans module claire ou ils pourraient aller. 
+J'ai llancé cette pipeline en commençant par le chunk 1 pour ne pas utiliser tout mes tokens d'un coup. Test concluant donc je lance tout les chunk. Les agents IA partent des buckets et vont jusqu'a l'implementation des headers / nouveaux test et la créations de MR en mon num sur les repos. 
+Maintenant j'ai passé toutes les MR (il y en a une dizaine par repo) en draft et je vais les review une par une.
+apres review de 3 MR, résultat globalement bon mais quelques ratés. par exemple scrs pas totalement couvert par le test qui lui a été associé. 
+En parallèle je continue a faire évoler les job en CI de validation des SCRS.
+Maintenant il y a deux job, un premier qui verifie la présence de l'id du SCRS, bloquent (si non present CI fail)
+un job qui vérifie la présence du gherkin et des labels dans le header. encore a revoir ne revoie pas les erreur pour le moment.
+Comme les job vont etre utlisé sur deux repo, il me parait plus judicieux de créer un repo ci avec les job qui sera appelé dans chaque repo plutot que de dupliquer les script dans les 2 repo. 
+J'en ai parlé avec un devops il m'as conseiller de créer d'abord dans la Sandbox puis on exportera dans la CI Shared.
+J'ai donc bougé tout les script de CI dans un nouveau projet.
+J'ai aussi discuté de l'utilisation de LLM dans la CI, et pour le moment ce n'est ni possible ni voulu pour des raison d'architecture. 
+J'ai également commencé a regarder comment accéder a CodeBeamer l'app qui recense les SCRS , depuis la CI, aparemment dans les variables d'environnements on a des tokens codebeamer mais les api sont fermés, à explorer.
+
+## Semaine 13 (06/07 -> 10/07) -- CURRENT
+J'ai commencé par explorer les credentials de codebeamer. aparemment on a un bot appelé Nestor qui a acces a Codebeamer entre autres.
+J'ai réussi a avoir acces a la page HTML d'un SCRS en utilisant ses credentials user + password mais je récupère une page de 6000 lignes avec une description pollué par de la mise en forme. 
+J'ai réussi a appeler l'API Codebeamer en me basant sur ce sui était fait dans un repo de CLI d'appels codebeamer pour lier des test a des SCRS. 
+L'API est donc bien accessible en CI avec Nestot Mais ... la description du scrs est toujours pourrie. 
+J'ai donc recréer un parser de description qui cette fois la nettoie bien en me basant sur les 3000 descriptions que j'avais en export. Dans reqtracck j'avais fait un cleaner basé sur des regexp qui marchait moyennement mais asser pour ce que je voulais. Maitenant j'ai un vrai parseur/cleaner qui nettoie vraiment la description basé sur le format de description wiki utilisé par codebeamer. 
+J'ai également réussi a installer un LLM local Ollama gwen3.6 qui marche plutot bien apres 2-3 tests. J'espere pouvoir l'utiliser pour reqtrack et aussi en CI il faut que je voie avec les devops. 
