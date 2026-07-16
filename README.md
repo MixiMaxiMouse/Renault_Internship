@@ -187,5 +187,11 @@ Lundi mardi mercredi de congés.
 Début de rédaction du premier jet du rapport de stage.
 finalisation des jobs en ci, clean du repo.
 continuation de review des MR de la pipeline IA des SCRS.
+Retours sur metriques manquantes de la pipeline IA:
+J'ai créer deux agents IA dans opencode (donc des fichiers .md).
+ce qu'ils ont remontés : 
+15 MRS : 5 sur disco, 10 sur driverUI
+ceratines concernent seulement un SCRS, d'autres 7 d'un coup.
+pour le moment 5 mergés sur driverUI, les autres sont encore en draft.
 
 ## Semaine 18 (20/07 -> 24/07)
