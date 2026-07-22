@@ -193,5 +193,6 @@ ce qu'ils ont remontés :
 15 MRS : 5 sur disco, 10 sur driverUI
 ceratines concernent seulement un SCRS, d'autres 7 d'un coup.
 pour le moment 5 mergés sur driverUI, les autres sont encore en draft.
+concernant ollama, j'ai vu avec les devops comme ollama tourne sur mon pc, il est lié a mon compte/ session donc impossible d'utiliser en ci. Par contre je l'ai rajouté dans reqtrack, maintenant les feedback AI peuvent etre fait gratuitement (sans tokens) avec ollama.
 
 ## Semaine 18 (20/07 -> 24/07)
