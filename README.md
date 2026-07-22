@@ -195,5 +195,6 @@ ceratines concernent seulement un SCRS, d'autres 7 d'un coup.
 pour le moment 5 mergés sur driverUI, les autres sont encore en draft.
 concernant ollama, j'ai vu avec les devops comme ollama tourne sur mon pc, il est lié a mon compte/ session donc impossible d'utiliser en ci. Par contre je l'ai rajouté dans reqtrack, maintenant les feedback AI peuvent etre fait gratuitement (sans tokens) avec ollama.
 par rapport au clean des descriptions codebeamer en wiki, il existe une bibliotheque python qui fait ça. un devops me l'a donné. Le language est en faite du creole markup pas du wiki, et le lib python est python-creole.
+Apres verification, ce n'est pas du wiki creole mais du JSPwiki mélangé a du CSS, donc l'extention python ne remplace pas mon parser. de plus elle produirait du Html qu'il faudrait encore retransformer.
 
 ## Semaine 18 (20/07 -> 24/07)
